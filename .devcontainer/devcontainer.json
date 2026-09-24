@@ -1,6 +1,11 @@
 {
   "name": "n8n Codespace",
-  "image": "mcr.microsoft.com/devcontainers/universal:linux",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "moby": false
+    }
+  },
   "forwardPorts": [5678],
   "portsAttributes": {
     "5678": {
