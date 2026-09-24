@@ -1,26 +1,4 @@
 {
-  "name": "n8n Codespace",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
-  "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {
-      "moby": false
-    }
-  },
-  "forwardPorts": [5678],
-  "portsAttributes": {
-    "5678": {
-      "label": "n8n",
-      "onAutoForward": "openBrowser",
-      "protocol": "http"
-    }
-  },
-  "postCreateCommand": "mkdir -p .data/n8n .data/postgres && chmod 700 .data/n8n .data/postgres && cp -n .env.example .env || true",
-  "postStartCommand": "bash -lc 'until docker info >/dev/null 2>&1; do sleep 2; done; docker compose up -d'",
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "ms-azuretools.vscode-containers"
-      ]
-    }
-  }
+  "name": "n8n Automated Workflow",
+  "postStartCommand": "docker compose up -d"
 }
